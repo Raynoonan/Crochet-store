@@ -1,0 +1,15 @@
+spring:
+   datasource:
+     username: crochet_store
+     password: crochet_store
+     url: jdbc:mysql://localhost:3306/crochet_store
+
+   jpa:
+     hibernate:
+       ddl-auto: update
+     show-sql: true
+     defer-datasource-initialization: true
+     
+   sql: 
+     init:
+       mode: always

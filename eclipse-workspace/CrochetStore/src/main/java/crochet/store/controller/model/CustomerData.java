@@ -24,8 +24,8 @@ public class CustomerData {
    customerLastName = customer.getCustomerLastName();
    customerEmail= customer.getCustomerEmail();
    
-   for(supplies supplies : customer.getSupplies()) {
-     supplies.add(new suppliesResponse(supplies));
+   for(supplies supply: customer.getSupplies()) {
+     supplies.add(new suppliesResponse(supply));
      
    }
   }

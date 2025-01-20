@@ -21,10 +21,12 @@ public class store {
   private String storeName;
   private String city;
   private String state;
-  private Integer zip;
+  private String zip;
   
   @EqualsAndHashCode.Exclude
   @ToString.Exclude
   @OneToMany(mappedBy = "store", cascade =CascadeType.ALL)
   private Set<supplies> supplies = new HashSet<>();
+
+ 
 }

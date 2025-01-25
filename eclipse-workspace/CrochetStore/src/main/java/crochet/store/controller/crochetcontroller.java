@@ -65,13 +65,12 @@ public class crochetcontroller {
     return Map.of("message", "Deleted customer with ID=" + customerId);
   }
   @ResponseStatus(code = HttpStatus.CREATED)
-  @PostMapping("/customer/{customerId}/store")
-  public StoreData insertStore(@PathVariable Long customerId,
-      @RequestBody StoreData storeData) {
+  @PostMapping("/store")
+  public StoreData insertStore( @RequestBody StoreData storeData) {
     
-    log.info("Creating store {} for customer with ID={}", customerId, storeData);
+    log.info("Creating store {}", storeData);
     
-    return crochetStoreService.saveStore(customerId,storeData);
+    return crochetStoreService.saveStore(storeData);
   }
     
    @ResponseStatus(code = HttpStatus.CREATED)

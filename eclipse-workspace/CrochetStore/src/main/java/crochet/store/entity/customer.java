@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 @Entity
  @Data
-public class customer { 
+public class Customer { 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customerId;
@@ -31,5 +31,5 @@ public class customer {
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "customer_supplies", joinColumns = @JoinColumn(name ="customer_id"),
     inverseJoinColumns = @JoinColumn(name ="supplies_id")) 
-    private Set<supplies> supplies = new HashSet<>();
+    private Set<Supplies> supplies = new HashSet<>();
 }

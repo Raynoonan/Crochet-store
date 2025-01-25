@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class supplies {
+public class Supplies {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long suppliesId;
@@ -24,10 +24,10 @@ public class supplies {
    private String material;
    
    @ManyToMany(mappedBy= "supplies")
-   private Set<customer> customer = new HashSet<>();
+   private Set<Customer> customer = new HashSet<>();
    
    @ManyToOne(cascade = CascadeType.ALL)
    @JoinColumn(name = "store_id", nullable = false)
-   private store store;
+   private Store store;
    
 }

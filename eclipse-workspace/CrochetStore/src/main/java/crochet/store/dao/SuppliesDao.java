@@ -1,11 +1,10 @@
 package crochet.store.dao;
 
-import java.util.Set;
 import org.springframework.data.jpa.repository.JpaRepository;
-import crochet.store.entity.supplies;
+import crochet.store.entity.Supplies;
 
-public interface SuppliesDao extends JpaRepository<supplies, Long> {
+public interface SuppliesDao extends JpaRepository<Supplies, Long> {
 
-  Set<supplies> findAllBySupplyIn(Set<String> supplies);
+ 
 
 }

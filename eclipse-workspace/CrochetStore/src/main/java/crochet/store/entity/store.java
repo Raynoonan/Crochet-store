@@ -14,7 +14,7 @@ import lombok.ToString;
 
 @Data
 @Entity
-public class store {
+public class Store {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long storeId;
@@ -26,7 +26,7 @@ public class store {
   @EqualsAndHashCode.Exclude
   @ToString.Exclude
   @OneToMany(mappedBy = "store", cascade =CascadeType.ALL)
-  private Set<supplies> supplies = new HashSet<>();
+  private Set<Supplies> supplies = new HashSet<>();
 
  
 }

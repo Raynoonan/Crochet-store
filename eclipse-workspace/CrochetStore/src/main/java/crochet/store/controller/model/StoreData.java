@@ -2,14 +2,8 @@ package crochet.store.controller.model;
 
 import java.util.HashSet;
 import java.util.Set;
-import crochet.store.controller.model.CustomerData.suppliesResponse;
-import crochet.store.entity.customer;
-import crochet.store.entity.store;
-import crochet.store.entity.supplies;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import crochet.store.entity.Store;
+import crochet.store.entity.Supplies;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -25,30 +19,31 @@ public class StoreData {
   private String city;
   private String state;
   private String zip;
-  private Set<String> supplies = new HashSet<>();
+  private Set<StoreSupplies> supplies = new HashSet<>();
   
-  public StoreData(store store) {
+  public StoreData(Store store) {
     storeId= store.getStoreId();
     storeName = store.getStoreName();
     city = store.getCity();
     state = store.getState();
     zip = store.getZip();
     
-    for(supplies supply: store.getSupplies()) {
-      supplies.add(new Storesupplies(supply));
+    for(Supplies supply: store.getSupplies()) {
+      supplies.add(new StoreSupplies(supply));
   
   }
+    
   }
   @Data
   @NoArgsConstructor
-  public static class Storesupplies {
+  public static class StoreSupplies {
     private Long suppliesId;
     private String type;
     private Double sizeOrWeight;
     private String color;
     private String material;
     
-   public Storesupplies(supplies supplies) {
+   public StoreSupplies(Supplies supplies) {
      suppliesId = supplies.getSuppliesId();
      type = supplies.getType();
      sizeOrWeight = supplies.getSizeOrWeight();
